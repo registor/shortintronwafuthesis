@@ -1,6 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
-\PYG{l+s+sb}{\PYGZdl{}\PYGZdl{}}\PYG{l+m}{2}\PYG{n+nv}{\PYGZbs{}uparrow\PYGZbs{}uparrow}\PYG{n+nb}{ k}
-\PYG{n+nv}{\PYGZbs{}mathrel}\PYG{n+nb}{\PYGZob{}}\PYG{n+nv}{\PYGZbs{}mathop}\PYG{o}{=}\PYG{n+nb}{\PYGZca{}\PYGZob{}}\PYG{n+nv}{\PYGZbs{}rm}\PYG{n+nb}{ def\PYGZcb{}\PYGZcb{}}
-\PYG{l+m}{2}\PYG{n+nb}{\PYGZca{}\PYGZob{}}\PYG{l+m}{2}\PYG{n+nb}{\PYGZca{}\PYGZob{}}\PYG{n+nv}{\PYGZbs{}cdot}\PYG{n+nb}{\PYGZca{}\PYGZob{}}\PYG{n+nv}{\PYGZbs{}cdot}\PYG{n+nb}{\PYGZca{}\PYGZob{}}\PYG{n+nv}{\PYGZbs{}cdot}\PYG{n+nb}{\PYGZca{}}\PYG{l+m}{2}\PYG{n+nb}{\PYGZcb{}\PYGZcb{}\PYGZcb{}\PYGZcb{}}
-\PYG{n+nv}{\PYGZbs{}vbox}\PYG{n+nb}{\PYGZob{}}\PYG{n+nv}{\PYGZbs{}hbox}\PYG{n+nb}{\PYGZob{}\PYGZdl{}}\PYG{n+nv}{\PYGZbs{}Big\PYGZbs{}\PYGZcb{}\PYGZbs{}scriptstyle}\PYG{n+nb}{ k\PYGZdl{}\PYGZcb{}}\PYG{n+nv}{\PYGZbs{}kern}\PYG{l+m}{0}\PYG{n+nb}{pt\PYGZcb{}.}\PYG{l+s}{\PYGZdl{}\PYGZdl{}}
-\end{Verbatim}

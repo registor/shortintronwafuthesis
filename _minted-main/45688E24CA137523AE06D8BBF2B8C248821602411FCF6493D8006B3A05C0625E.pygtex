@@ -1,3 +1,0 @@
-\begin{Verbatim}[commandchars=\\\{\},codes={\catcode`\$=3\catcode`\^=7\catcode`\_=8}]
-\PYG{l+s+sb}{\PYGZdl{}\PYGZdl{}}\PYG{n+nv}{\PYGZbs{}sum}\PYG{n+nb}{\PYGZus{}\PYGZob{}p}\PYG{n+nv}{\PYGZbs{}rm\PYGZbs{};}\PYG{n+nb}{prime\PYGZcb{}f}\PYG{o}{(}\PYG{n+nb}{p}\PYG{o}{)}\PYG{n+nb}{ }\PYG{o}{=}\PYG{n+nb}{ }\PYG{n+nv}{\PYGZbs{}int}\PYG{n+nb}{\PYGZus{}\PYGZob{}t\PYGZgt{}}\PYG{l+m}{1}\PYG{n+nb}{\PYGZcb{}f}\PYG{o}{(}\PYG{n+nb}{t}\PYG{o}{)}\PYG{n+nb}{d}\PYG{n+nv}{\PYGZbs{}pi}\PYG{o}{(}\PYG{n+nb}{t}\PYG{o}{)}\PYG{n+nb}{.}\PYG{l+s}{\PYGZdl{}\PYGZdl{}}
-\end{Verbatim}
