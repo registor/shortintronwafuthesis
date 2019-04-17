@@ -1,0 +1,16 @@
+\beamer@sectionintoc {1}{简介}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{为什么要用\LaTeX ？}{2}{0}{1}
+\beamer@subsectionintoc {1}{2}{什么是\LaTeX ？}{11}{0}{1}
+\beamer@sectionintoc {2}{安装\LaTeX 系统}{23}{0}{2}
+\beamer@subsectionintoc {2}{1}{下载}{23}{0}{2}
+\beamer@subsectionintoc {2}{2}{安装}{24}{0}{2}
+\beamer@subsectionintoc {2}{3}{检测T\kern -.1667em\lower .5ex\hbox {E}\kern -.025emX\tmspace +\thinmuskip {.1667em}Live}{28}{0}{2}
+\beamer@subsectionintoc {2}{4}{更新T\kern -.1667em\lower .5ex\hbox {E}\kern -.025emX\tmspace +\thinmuskip {.1667em}Live}{29}{0}{2}
+\beamer@subsectionintoc {2}{5}{测试T\kern -.1667em\lower .5ex\hbox {E}\kern -.025emX\tmspace +\thinmuskip {.1667em}Live}{30}{0}{2}
+\beamer@subsectionintoc {2}{6}{IDE环境}{36}{0}{2}
+\beamer@sectionintoc {3}{学习\LaTeX }{37}{0}{3}
+\beamer@subsectionintoc {3}{1}{学习资源}{37}{0}{3}
+\beamer@subsectionintoc {3}{2}{{\fontfamily {cmr}\selectfont \LaTeX }的文档结构}{38}{0}{3}
+\beamer@subsectionintoc {3}{3}{处理错误}{49}{0}{3}
+\beamer@sectionintoc {4}{关于我}{52}{0}{4}
+\beamer@subsectionintoc {4}{1}{联系方式}{52}{0}{4}
