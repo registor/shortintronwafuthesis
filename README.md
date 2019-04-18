@@ -9,7 +9,7 @@
 
 该项目用LaTeX的Beamer实现，Beamer主题改自丹麦奥尔堡大学(Aalborg University)的[AAU Beamer主题](https://github.com/jkjaer/aauLatexTemplates)。
 
-可以通过修改`beamercolorthemeNWSUAFsidebar.sty`、`beamerinnerthemeNWSUAFsidebar.sty`、`beamerouterthemeNWSUAFsidebar.sty`和`beamerthemeNWSUAFsidebar.sty`4个主题文件进行个性化定制，如将`beamerinnerthemeNWSUAFsidebar.sty`中第71行的`中国$\boldsymbol{\cdot}$杨凌`地址变更为自己的地址。
+对于Beamer主题，可以通过修改`beamercolorthemeNWSUAFsidebar.sty`、`beamerinnerthemeNWSUAFsidebar.sty`、`beamerouterthemeNWSUAFsidebar.sty`和`beamerthemeNWSUAFsidebar.sty`4个主题文件进行个性化定制，例如：可以通过修改`beamerinnerthemeNWSUAFsidebar.sty`中第71行的`中国$\boldsymbol{\cdot}$杨凌`实现地址变更。
 
 Happy LaTeXing！~
 
