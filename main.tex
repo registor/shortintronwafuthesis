@@ -1,7 +1,7 @@
+% 协助检查有无过期宏包及命令
 \RequirePackage[l2tabu, orthodox]{nag}
 % 包含beamer宏包
-\documentclass[xcolor=svgnames, t, 10pt]{ctexbeamer}%fragile, 
-% 草稿模式，加快编译速度\documentclass[draft,xcolor=svgnames]{beamer}
+\documentclass[xcolor=svgnames, t, aspectratio=169]{ctexbeamer}
 
 % 载入需要的宏包
 \input{setup/packages.tex}
@@ -15,14 +15,13 @@
 %\pgfpagesuselayout{3 on 1 with notes}[a4paper,border shrink=5mm]
 %\pgfpagesuselayout{2 on 1 with notes landscape}[a4paper,border shrink=5mm]
 %\pgfpagesuselayout{1 on 1 with notes}[a4paper,border shrink=5mm]
-%%errors dont know why
 
 % 打开PDF后直接全屏
 %\hypersetup{pdfpagemode={FullScreen}}
 
 %设置标题==================================================
 \title[\LaTeX 排版] % (可选，仅当标题过长时使用)
-{\LaTeX 科技排版简介}%\\[0.5ex] {\scriptsize V18.10}
+{\LaTeX 毕业论文排版简介}%\\[0.5ex] {\scriptsize V18.10}
 
 \date{\today}
 
@@ -45,11 +44,6 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
   % 不知道为什么;( )
 }
 % ==================================================
-
-% 编译控制==================================================设定只输出
-% 选定标签的章节，加快编译速度
-% \includeonlylecture{lec:introduction}
-
 % 设定仅编译的帧，加快编译速度
 %\includeonlyframes{testframe}
 % ==================================================
@@ -69,7 +63,7 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
 \section[\LaTeX 简介]{简介}\label{sec01}
 \subsection[为什么？]{为什么要用\LaTeX ？}\label{sec01-01}
 \begin{frame}{为什么要用\LaTeX?}{学位论文排版的需求}
-  \stretchon
+  \begin{spacing}{0.85}
   \begin{itemize} \setlength\itemsep{1em}
   \item 标准、规范\alert{严格}
     \begin{itemize}
@@ -102,11 +96,10 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
     \end{itemize}  
   % \item 高效、便捷
   %   \begin{itemize}
-  %   \item \nwafuthesis 模
-  %     板：\url{https://github.com/registor/nwafuthesis}
+  %   \item \href{https://github.com/registor/nwafuthesis}{\nwafuthesis 模板}
   %   \end{itemize}
   \end{itemize}
-  \stretchoff
+  \end{spacing}
 \end{frame}
 
 \begin{frame}{为什么要用\LaTeX?}{自由的召唤}
@@ -127,8 +120,8 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
     \end{itemize}
     \column{0.5\textwidth}
     \begin{center}
-      \includegraphics[width=0.6\textwidth]{titlepage}\\
-      \includegraphics[width=0.6\textwidth]{latexframe}\\%scale=0.05
+      \includegraphics[width=0.45\textwidth]{latexframe}\\
+      \includegraphics[width=0.3\textwidth]{titlepage}\\%scale=0.05
       贴心\alert{秘书}
     \end{center}
   \end{columns}
@@ -459,7 +452,7 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
       \end{enumerate}
     \end{itemize}
     \begin{center}
-        \scalebox{0.7}{ \centering
+        \scalebox{0.6}{ \centering
         \tikzset{box/.style={rectangle, draw=black, fill=lightgray}} 
         \begin{tikzpicture}
           \node (begin) {编写};
@@ -516,11 +509,11 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
   \stretchoff
 \end{frame}
 
-\begin{frame}[t]{什么是\LaTeX?}{协作方便}
-  \begin{columns}[c]
-    % \column{0.05\textwidth}
+\begin{frame}[t]{什么是\LaTeX?}{优点}
+  \vspace{-3ex}
+  \begin{columns}%[c]
     \column{0.4\textwidth}
-  \stretchon
+  \begin{spacing}{0.7}
   \begin{itemize}
   \item \alert{多人}协作
     \begin{itemize}
@@ -557,12 +550,33 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
       \end{itemize}
     \end{itemize}
   \end{itemize}
-  %\stretchoff
+  \end{spacing}
   \column{0.55\textwidth}
   \begin{center}
-    \includegraphics[width=1.0\textwidth]{coworks}
+    \includegraphics[height=0.8\textheight]{coworks}
   \end{center}
 \end{columns}
+\end{frame}
+
+\begin{frame}[t]{什么是\LaTeX?}{优点}
+  %\stretchon
+  \begin{itemize}
+  \item 修订管理
+    \begin{itemize}
+    \item 注释管理
+    \item 版本控制
+      \begin{itemize}
+      \item SVN
+      \item Git(回滚、diff)
+      \end{itemize}
+    \end{itemize}
+  \end{itemize}
+  \begin{center}
+    \includegraphics[height=0.6\textheight]{github}\quad
+    \includegraphics[height=0.6\textheight]{wordver01}\quad
+    %\includegraphics[height=0.4\textheight]{wordver02}
+  \end{center}
+  %\stretchoff
 \end{frame}
 
 \begin{frame}[t]{什么是\LaTeX?}{缺点}
@@ -581,6 +595,7 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
 \end{frame}
 
 \begin{frame}[t]{什么是\LaTeX?}{PDF文件的批阅批注}
+  %\vspace{-3ex}
   % \stretchon
   \begin{columns}[c]
     % \column{0.05\textwidth}
@@ -594,15 +609,15 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
     \item
       \alert{平板}批注\footnotemark[\value{footnote}]%\footnotemark[\ref{note
       \begin{itemize}
-      \item GoodNotes
+      %\item GoodNotes
       \item Notability
       \item $\ldots$
       \end{itemize}
     \item \alert{软件}批注
       \begin{itemize}
       \item Adobe Acrobat Pro
-      \item Foxit Reader(福昕)
-      \item Okular
+      %\item Foxit Reader(福昕)
+      %\item Okular
       \item $\ldots$
       \end{itemize}
     \item \alert{源码}批注\footnote[frame]{导师\qtmark{智慧过人、气
@@ -617,7 +632,7 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
       \item 批注宏包
         \begin{itemize}
         \item changes
-        \item todonotes
+        %\item todonotes
         \item $\ldots$
         \end{itemize}
       \end{itemize}
@@ -625,8 +640,8 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
     \end{spacing}
   \column{0.45\textwidth}
   \begin{center}
-    \includegraphics[width=0.6\textwidth]{pdftakenotes}\\
-    \includegraphics[width=0.6\textwidth]{todonotes}
+    \includegraphics[width=0.4\textwidth]{pdftakenotes}\\
+    \includegraphics[width=0.4\textwidth]{todonotes}
   \end{center}
 \end{columns}
 % \stretchoff
@@ -703,15 +718,23 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
   \stretchon
   \emph{以下安装以Windows平台为例}
   \begin{itemize}
-  \item 在\url{}{https://www.tug.org/texlive/}下载
-    \texttt{texlive2018.iso}\footnote[frame]{后续图片不做更新，2018与2016的安
-      装过程和注意事项完全相同。}
-  \item 将下载到的.iso文件文件刻录到DVD或用虚拟光驱加载
-  \item Windows10可以\alert{直接加载}.iso文件
-  \item 运行install-tl-advanced.bat批处理文件进行安装
+  \item 下载并安装\TeX Live
+    \begin{itemize}
+    \item 在\url{}{https://www.tug.org/texlive/}下载
+      \texttt{texlive2018.iso}\footnote[frame]{后续图片不做更
+        新，2018与2016的安装过程和注意事项完全相同。}
+    \item 将下载到的.iso文件文件刻录到DVD或用虚拟光驱加载
+    \item Windows10可以\alert{直接加载}.iso文件
+    \item 运行install-tl-advanced.bat批处理文件进行安装
+    \end{itemize}
+  \item 其它套件
+    \begin{itemize}
+    \item \href{http://www.latexstudio.net/page/texsoftware}{\LaTeX 开
+        源小屋}
+    \end{itemize}
   \end{itemize}
-  \centering
-  \includegraphics[height=.45\textheight]{texliveinst/fig02-00}
+  \centering\vspace{-4ex}
+  \includegraphics[height=.3\textheight]{texliveinst/fig02-00}
   \stretchoff
 \end{frame}
 \subsection[安装]{安装}
@@ -748,31 +771,38 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
     \item 耐心等待，直到安装结束
     \end{itemize}
     \centering
-    \includegraphics[width=.45\textwidth]{texliveinst/fig02-04}
-    \hfill
-    \includegraphics[width=.45\textwidth]{texliveinst/fig02-05}
-    \\[2em]
-    \includegraphics[width=.5\textwidth]{texliveinst/fig02-06}
+    \includegraphics[width=.4\textwidth]{texliveinst/fig02-04}
+    \qquad
+    \includegraphics[width=.4\textwidth]{texliveinst/fig02-05}
+    \\[1ex]
+    \includegraphics[width=.4\textwidth]{texliveinst/fig02-06}
 \end{frame}
 \subsection[检测]{检测\TeXLive }
-\begin{frame}[t,fragile]{安装\LaTeX 系统}{检测\TeXLive }
+\begin{frame}[t]{安装\LaTeX 系统}{检测\TeXLive }
+  \stretchon
   \begin{itemize}
   \item 测试，分别在命令行窗口输入：
     \begin{itemize}
-    \item {\verb|tex --version|}
-    \item {\verb|xelatex --version|}
+    \item {\texttt{tex --version}}
+    \item {\texttt{xelatex --version}}
     \end{itemize}
   \end{itemize}
-  \centering \hfill
+  \centering 
   \includegraphics[width=.35\textwidth]{texliveinst/fig02-07}
-  \hfill
+  \qquad
   \includegraphics[width=.35\textwidth]{texliveinst/fig02-08}
-  \begin{block}{测试结果}
-    能够正常显示版本号，则表示安装及路径配置成功，若无法正常执行这两个
-    命令，请检查PATH路径设置，应该将{\TeX}Live安装路径中的\verb|bin|路
-    径(如：\verb|C:\texlive\2018\bin\win32|)加入到PATH环境变量中
-    \footnote[frame]{请自行百度或Google如何添加环境变量。}。
-  \end{block}
+  \begin{minipage}[h]{0.6\linewidth}
+    \begin{block}{测试结果}
+      \scriptsize      
+      能够正常显示版本号，则表示安装及路径配置成功，若无法正常执行这两
+      个命令，请检查PATH路径设置，应该将{\TeX}Live安装路径中
+      的\texttt{bin}路径(如：\texttt{C:\textbackslash
+        texlive\textbackslash 2018\textbackslash bin\textbackslash
+        win32})加入到PATH环境变量中\footnote[frame]{请自行百度
+        或Google如何添加环境变量。}。
+    \end{block}
+  \end{minipage}
+  \stretchoff
 \end{frame}
 
 \subsection[更新]{更新\TeXLive }
@@ -810,7 +840,7 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
   \item 创建\verb|build.bat|批处理文件用于编译{\LaTeX}源文件
   \end{itemize}
   \begin{center}
-    \includegraphics[width=.6\textwidth]{texliveinst/fig02-09}
+    \includegraphics[width=.5\textwidth]{texliveinst/fig02-09}
   \end{center}
 \end{frame}
 
@@ -829,7 +859,7 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
            \end{document}
         \end{texcode}
     
-    \emph{注：后续课程解释}
+    %\emph{注：后续课程解释}
   \end{minipage}
   \hfill
   \begin{minipage}{0.5\linewidth}
@@ -860,51 +890,61 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
   \end{minipage}
 \end{frame}
 
-\begin{frame}[t,fragile]{安装\LaTeX 系统}{编译\latex 源代码文件}
+\begin{frame}[t]{安装\LaTeX 系统}{编译\latex 源代码文件}
+  \stretchon
   \begin{itemize}
-  \item 执行\verb|build.bat|编译{\LaTeX}源文件\verb|testLatex.tex|
-  \item 得到\verb|testLatex.pdf|结果文件
+  \item 执行\texttt{build.bat}编译{\LaTeX}源文件\texttt{testLatex.tex}
+  \item 得到\texttt{testLatex.pdf}结果文件
   \end{itemize}
+
   \centering
-  \includegraphics[height=.35\textheight]{texliveinst/fig02-12-2}
-  \hfill
-  \includegraphics[height=.35\textheight]{texliveinst/fig02-12}
+  \includegraphics[height=.45\textheight]{texliveinst/fig02-12-2}
+  \qquad
+  \includegraphics[height=.45\textheight]{texliveinst/fig02-12}
+  \stretchoff
 \end{frame}
 
-\begin{frame}[t,fragile]{安装\LaTeX 系统}{查看编译结果}
+\begin{frame}[t]{安装\LaTeX 系统}{查看编译结果}
+  \stretchon
   \begin{itemize}
-  \item 双击\verb|testLatex.pdf|查看生成的到\verb|pdf|文件
+  \item 双击\texttt{testLatex.pdf}查看生成的到\texttt{pdf}文件
   \end{itemize}
   \centering
-  \includegraphics[width=.65\textwidth]{texliveinst/fig02-13}
-  \begin{block}{结果正确}
-    到此，表示{\TeX}Live安装正常，能够正常工作，配置成功。
-  \end{block}
+  \includegraphics[width=.4\textwidth]{texliveinst/fig02-13}
+  \begin{minipage}[h]{0.6\linewidth}
+    \begin{block}{结果正确}
+      \scriptsize
+      \centering
+      到此，表示{\TeX}Live安装正常，能够正常工作，配置成功。
+    \end{block}
+  \end{minipage}
+  \stretchoff
 \end{frame}
 
-\begin{frame}[t, fragile]{安装\LaTeX 系统}{网络安装方式}
-    \begin{itemize}
-    \item 通过网络在线安装与上述过程类似，可参考
-      \url{http://www.tug.org/texlive/}的指导进行安装
-    \item 安装结束后，也可以按上述方式进行测试
-    \end{itemize}
-    \begin{center}
-      \includegraphics[width=.9\textwidth]{texliveinst/fig02-000}
-    \end{center}
+\begin{frame}[t]{安装\LaTeX 系统}{网络安装方式}
+  \stretchon
+  \begin{itemize}
+  \item 通过网络在线安装与上述过程类似，可参
+    考\url{http://www.tug.org/texlive/}的指导进行安装
+  \item 安装结束后，也可以按上述方式进行测试
+  \end{itemize}
+  \centering
+  \includegraphics[width=.55\textwidth]{texliveinst/fig02-000}
+  \stretchoff
 \end{frame}
 
 \subsection[IDE]{IDE环境}
-\begin{frame}[t, fragile]{安装\LaTeX 系统}{安装编辑器}
-  \begin{itemize}  
-  \item 可以使用任何一个编辑器做为\LaTeX 的IDE:    
+\begin{frame}[t]{安装\LaTeX 系统}{安装编辑器}
+  \stretchon
+  \begin{itemize}
+  \item 可以使用任何一个编辑器做为\LaTeX 的IDE:
   \end{itemize}
-  \begin{center}
-    \includegraphics[height=.3\textheight]{texliveinst/fig02-22}
-    \hfill
-    \includegraphics[height=.3\textheight]{texliveinst/texstudio}
-    \\[2em]
-    \includegraphics[width=.4\textwidth]{texliveinst/WinEdit}
-  \end{center}  
+  \centering
+  \includegraphics[height=.3\textheight]{texliveinst/fig02-22} \qquad
+  \includegraphics[height=.3\textheight]{texliveinst/texstudio}
+  \\[1ex]
+  \includegraphics[width=.3\textwidth]{texliveinst/WinEdit}
+  \stretchoff
 \end{frame}
 %%%%%%%%%%%%%%%%
 
@@ -1139,6 +1179,88 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
   行这里。
   \end{itemize}
   \stretchoff  
+\end{frame}
+
+\section[\nwafuthesis]{\nwafuthesis 毕业论文模板简介}
+\subsection[开发需求]{开发需求}
+\begin{frame}[t]{\nwafuthesis 模板}{开发需求}
+  \stretchon
+  \begin{itemize}
+  \item \href{https://yjshy.nwafu.edu.cn/xwgl/xwlwxzgf/index.htm}{研究生学位论文写作指南}
+  \item \href{https://jiaowu.nwsuaf.edu.cn/tzgg/34321.htm}{本科生毕业论文(设计)写作规范}
+  \end{itemize}
+  \centering
+  \includegraphics[height=0.5\textheight]{yjshxwb}\quad
+  \includegraphics[height=0.5\textheight]{jiaowuchu}
+  \stretchoff
+\end{frame}
+
+\subsection[模板下载]{模板下载}
+\begin{frame}[t]{\nwafuthesis 模板}{模板下载}
+  \stretchon
+  \begin{itemize}
+  \item \href{https://github.com/registor/nwafuthesis}{GitHub开源托管
+      (\alert{推荐})}\footnote[frame]{问题反馈与讲座、实时更新在GitHub
+      发布。}
+    \begin{itemize}
+    \item 模板必须文件
+      \begin{itemize}
+      \item \LaTeX 文档类(模板)： \qtmark{nwafuthesis.cls}
+      \item 文献著录样式文件：\qtmark{gb7714-2015ay.bbx}
+      \item 文献引注样式文件：\qtmark{gb7714-2015ay.cbx}
+      \item 中文行距调整宏包：\qtmark{zhlineskip.sty}
+      \item 学校图标：logo文件夹
+      \end{itemize}
+    \item demo 示例文件夹
+    \item release 打包下载
+    \end{itemize}
+  \item \href{http://202.117.179.110/}{信息学院师生互动平台}
+  \item 西农教学发展研讨QQ群
+  \end{itemize}
+  % \centering
+  % \includegraphics[height=0.6\textheight]{github}
+  \stretchoff
+\end{frame}
+
+\subsection[模板使用]{模板使用}
+\begin{frame}[t]{\nwafuthesis 模板}{模板使用}
+  \stretchon
+  \begin{itemize}
+  \item \href{http://www.latexstudio.net/page/texsoftware}{安装\TeX 套件}
+    \begin{itemize}
+    \item 跨平台：\TeX Live (\alert{推荐}，建议不低于2018版)
+    \item Windows：Mi\TeX 
+    \item MacOS：Mac\TeX
+    \end{itemize}
+  \item 安装IDE
+    \begin{itemize}
+    \item Windows：WinEdt
+    \item 跨平台：TexStudio
+    %\item 跨平台：Vim/Emacs
+    %\item 记事本：notepad++、gedit等
+    \item $\ldots$
+    \end{itemize}
+  \item 用\texinline{\documentclass{nwafuthesis}}引入文档类(模板)
+    \begin{itemize}
+    \item 用可选参数指定论文类型
+    \end{itemize}
+  \item 用\texinline{\nwafuset}和\texinline{\nwafusetEn}命令设置论文基本
+    参数
+  \item 撰写论文
+    \begin{itemize}
+    \item 直接撰写
+    \item 改写样例(\alert{推荐})
+    \end{itemize}
+  \item 注意事项
+    \begin{itemize}
+    \item 文件及路径命名不用中文和空格
+    \item 坚持\alert{内容与格式的分离}思想
+    \item 分文件撰写
+    \end{itemize}
+  \end{itemize}
+  % \centering
+  % \includegraphics[height=0.6\textheight]{github}
+  \stretchoff
 \end{frame}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 关于我 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

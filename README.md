@@ -5,7 +5,13 @@
 [![GitHub release](https://img.shields.io/github/release/ustctug/ustcthesis/all.svg)](https://github.com/ustctug/ustcthesis/releases/latest)
 [![GitHub commits](https://img.shields.io/github/commits-since/ustctug/ustcthesis/latest.svg)](https://github.com/ustctug/ustcthesis/commits/master)
 
-这是一个简短介绍LaTeX排版技术的项目。
+这是一个简短介绍LaTeX排版技术的项目，主要针对作者开发的西北农林科技大学学位论文LaTeX文档类(模板)nwafuthesis的使用进行相关说明。
+
+该项目用LaTeX的Beamer实现，Beamer主题改自丹麦奥尔堡大学(Aalborg University)的[AAU Beamer主题](https://github.com/jkjaer/aauLatexTemplates)。
+
+可以通过修改`beamercolorthemeNWSUAFsidebar.sty`、`beamerinnerthemeNWSUAFsidebar.sty`、`beamerouterthemeNWSUAFsidebar.sty`和`beamerthemeNWSUAFsidebar.sty`4个主题文件进行个性化定制，如将`beamerinnerthemeNWSUAFsidebar.sty`中第71行的`中国$\boldsymbol{\cdot}$杨凌`地址变更为自己的地址。
+
+Happy LaTeXing！~
 
 注意：
 
@@ -53,8 +59,5 @@
 
 ## 更多资料
 
-- [csvsimple宏包说明](https://ctan.org/pkg/csvsimple)
-- [csvsimple GitHub](https://github.com/T-F-S/csvsimple)
-- [pgfplotstable宏包说明](https://ctan.org/pkg/pgfplotstable)
-- [datatool宏包说明](https://ctan.org/pkg/datatool)
+- [nwafuthesis模板](https://github.com/registor/nwafuthesis)
 

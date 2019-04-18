@@ -54,13 +54,13 @@
       %{\usebeamerfont{institute}\insertinstitute}%\vspace*{0.5\baselineskip}
 
       \begin{beamercolorbox}[wd=\beamer@plainpagewidth,center,rounded=true,
-        sep=\baselineskip]{frametitle}%
-        {\usebeamerfont{title}\inserttitle}%fg->black%\usebeamercolor[fg]{title}
+        sep=0.5\baselineskip]{frametitle}%
+        {\usebeamerfont{title}\inserttitle}\vspace*{0.5\baselineskip}%fg->black%\usebeamercolor[fg]{title}
 
-        {\usebeamerfont{subtitle}\insertsubtitle}\vspace*{\baselineskip}%\usebeamercolor[fg]{subtitle}        
+        {\usebeamerfont{subtitle}\insertsubtitle}%\vspace*{\baselineskip}%\usebeamercolor[fg]{subtitle}        
         
       %  {\usebeamerfont{institute}\insertinstitute}%\vspace*{0.5\baselineskip}        
-        {\usebeamerfont{date}\insertdate}
+      %  {\usebeamerfont{date}\insertdate}
       \end{beamercolorbox}\vspace*{1.0\baselineskip}%
       
       {\usebeamerfont{author}\insertauthor}\vspace*{0.5\baselineskip}%
@@ -68,7 +68,8 @@
       \vfill%\vspace*{0.5\baselineskip}%\hspace{3.2em}{\inserttitlegraphic}
 
       {\usebeamerfont{institute}\insertinstitute}%\vspace*{0.5\baselineskip}
-      {\inserttitlegraphic \\ 中国$\boldsymbol{\cdot}$杨凌}\vspace*{0.5\baselineskip}%
+      {\inserttitlegraphic \\ 中国$\boldsymbol{\cdot}$杨凌}\\%
+      {\usebeamerfont{date}\insertdate}\vspace*{0.5\baselineskip}
 
       %{\usebeamerfont{institute}全国高校教师网络培训中心}%\vspace*{0.5\baselineskip}
       %{\usebeamerfont{institute}\insertdate ，北京}\vspace*{\baselineskip}
