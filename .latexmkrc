@@ -1,4 +1,4 @@
-$pdflatex = 'xelatex -shell-escape -synctex=1 -interaction=nonstopmode %O %S;cp %D release/LaTeX科技排版简介.pdf';
+$pdflatex = 'xelatex -shell-escape -synctex=1 -interaction=nonstopmode %O %S;cp %D release/LaTeX毕业论文排版简介.pdf';
 $pdf_mode = 1;
 $postscript_mode = $dvi_mode = 0;
 $clean_ext = 'aux bbl equ glo gls hd idx ilg ind lof lot out blg log thm toc synctex.gz lofEN lotEN equEN etoc';
