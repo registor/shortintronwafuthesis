@@ -93,6 +93,7 @@
 \newcommand\wysiwym{\textsc{WYSIWYM}---所想即所得}
 \newcommand\wysiwyg{\textsc{WYSIWYG}---所见即所得}
 \newcommand\myrule{\rule{\textwidth}{.5pt}}
+\newcommand\pkg[1]{\texttt{#1}}
 
 \colorlet{msofficecolour}{red!90!white}
 \colorlet{latexcolour}{green!90!black}
@@ -281,6 +282,9 @@
 \usetikzlibrary{decorations}
 % pgfplots设置
 \pgfplotsset{compat=newest,compat/show suggested version=false}
+
+\newfontfamily\LibertinusKey{LibertinusKeyboard-Regular.otf}
+\newcommand\kbd[1]{{\LibertinusKey#1}}
 
 % 插图路径设置
 % ==================================================
