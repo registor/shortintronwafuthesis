@@ -49,7 +49,7 @@
 \newminted{tex}{bgcolor=listinggray, frame=lines}
 \newminted[texcodett]{tex}{bgcolor=listinggray, frame=lines, escapeinside=||}
 \newminted[shell]{sh}{autogobble,fontsize=\small,frame=lines}
-\newmintedfile{tex}{bgcolor=listinggray, linenos=true, frame=lines}
+\newmintedfile{tex}{bgcolor=yellow!20, frame=lines}
 
 % 定义颜色
 % ==================================================
@@ -283,8 +283,82 @@
 % pgfplots设置
 \pgfplotsset{compat=newest,compat/show suggested version=false}
 
-\newfontfamily\LibertinusKey{LibertinusKeyboard-Regular.otf}
-\newcommand\kbd[1]{{\LibertinusKey#1}}
+% \newfontfamily\LibertinusKey{LibertinusKeyboard-Regular.otf}
+% \newcommand\kbd[1]{{\LibertinusKey#1}}
+
+
+%% 设置绘制目录结构的宏参数
+\definecolor{folderbg}{RGB}{124,166,198}
+\definecolor{folderborder}{RGB}{110,144,169}
+\newlength\Size
+\setlength\Size{4pt}
+\tikzset{%
+  folder/.pic={%
+    \filldraw [draw=folderborder, top color=folderbg!50, bottom color=folderbg] (-1.05*\Size,0.2\Size+5pt) rectangle ++(.75*\Size,-0.2\Size-5pt);
+    \filldraw [draw=folderborder, top color=folderbg!50, bottom color=folderbg] (-1.15*\Size,-\Size) rectangle (1.15*\Size,\Size);
+  },
+  file/.pic={%
+    \filldraw [draw=folderborder, top color=folderbg!5, bottom color=folderbg!10] (-\Size,.4*\Size+5pt) coordinate (a) |- (\Size,-1.2*\Size) coordinate (b) -- ++(0,1.6*\Size) coordinate (c) -- ++(-5pt,5pt) coordinate (d) -- cycle (d) |- (c) ;
+  },
+}
+\forestset{%
+  declare autowrapped toks={pic me}{},
+  declare boolean register={pic root},
+  pic root=0,
+  pic dir tree/.style={%
+    for tree={%
+      folder,
+      %font=\ttfamily,
+      grow'=0,
+      s sep=1.0pt,
+      font=\small \sffamily,
+      %fit=band,
+      %ysep = 1.0pt,
+      inner ysep = 2.6pt,
+    },
+    before typesetting nodes={%
+      for tree={%
+        edge label+/.option={pic me},
+      },
+      if pic root={
+        tikz+={
+          \pic at ([xshift=\Size].west) {folder};
+        },
+        align={l}
+      }{},
+    },
+  },
+  pic me set/.code n args=2{%
+    \forestset{%
+      #1/.style={%
+        inner xsep=2\Size,
+        pic me={pic {#2}},
+      }
+    }
+  },
+  pic me set={directory}{folder},
+  pic me set={file}{file},  
+}
+%% ==================================================
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% LaTeX Overlay Generator - Annotated Figures v0.0.2
+% Created with http://ff.cx/latex-overlay-generator/
+% If this generator saves you time, consider donating 5,- EUR! :-)
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                         #1          #2       #3         #4           #5          #6            #7           #8
+%\annotatedFigureBox{bottom-left}{top-right}{label}{label-position}{box-color}{label-color}{border-color}{text-color}
+\newcommand*\annotatedFigureBoxCustom[8]{\draw[#5,thick,rounded corners] (#1) rectangle (#2);\node at (#4) [fill=#6,thick,shape=circle,draw=#7,inner sep=2pt,font=\sffamily,text=#8] {\textbf{#3}};}
+\newcommand*\annotatedFigureBoxLabel[4]{\annotatedFigureBoxCustom{#1}{#2}{#3}{#4}{white}{white}{black}{black}}
+\newcommand*\annotatedFigureBox[3]{\draw[#3,thick,rounded corners] (#1) rectangle (#2);}
+\newenvironment {annotatedFigure}[1]{\centering\begin{tikzpicture}\node[anchor=south west,inner sep=0] (image) at (0,0) { #1};\begin{scope}[x={(image.south east)},y={(image.north west)}]}{\end{scope}\end{tikzpicture}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% 动态改变menukeys宏包的win/mac样式
+\makeatletter
+\def\setmenukeyswin{\def\tw@mk@os{win}}
+\def\setmenukeysmac{\def\tw@mk@os{mac}}
+\makeatother
 
 % 插图路径设置
 % ==================================================
