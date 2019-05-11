@@ -43,13 +43,13 @@
 
 % 设置minted宏包编排代码的参数及用于latex代码排版的简化命令
 \definecolor{listinggray}{gray}{0.92}
-\setminted{fontsize=\tiny, mathescape, breaklines=true, breakautoindent=false, autogobble}
+%\setminted{breaklines=true, breakautoindent=false}
 \newmintinline{tex}{fontsize=\normalsize}
 \newmintinline[texinlinett]{tex}{fontsize=\normalsize,escapeinside=||}
-\newminted{tex}{bgcolor=listinggray, frame=lines}
-\newminted[texcodett]{tex}{bgcolor=listinggray, frame=lines, escapeinside=||}
+\newminted{tex}{bgcolor=yellow!20, frame=lines}
+\newminted[texcodett]{tex}{bgcolor=yellow!20, frame=lines, escapeinside=||}
 \newminted[shell]{sh}{autogobble,fontsize=\small,frame=lines}
-\newmintedfile{tex}{bgcolor=yellow!20, frame=lines}
+\newmintedfile{tex}{bgcolor=yellow!20, fontsize=\footnotesize, frame=lines}
 
 % 定义颜色
 % ==================================================
@@ -349,7 +349,7 @@
 %                         #1          #2       #3         #4           #5          #6            #7           #8
 %\annotatedFigureBox{bottom-left}{top-right}{label}{label-position}{box-color}{label-color}{border-color}{text-color}
 \newcommand*\annotatedFigureBoxCustom[8]{\draw[#5,thick,rounded corners] (#1) rectangle (#2);\node at (#4) [fill=#6,thick,shape=circle,draw=#7,inner sep=2pt,font=\sffamily,text=#8] {\textbf{#3}};}
-\newcommand*\annotatedFigureBoxLabel[4]{\annotatedFigureBoxCustom{#1}{#2}{#3}{#4}{white}{white}{black}{black}}
+\newcommand*\annotatedFigureBoxLabel[4]{\annotatedFigureBoxCustom{#1}{#2}{#3}{#4}{red}{white}{black}{black}}
 \newcommand*\annotatedFigureBox[3]{\draw[#3,thick,rounded corners] (#1) rectangle (#2);}
 \newenvironment {annotatedFigure}[1]{\centering\begin{tikzpicture}\node[anchor=south west,inner sep=0] (image) at (0,0) { #1};\begin{scope}[x={(image.south east)},y={(image.north west)}]}{\end{scope}\end{tikzpicture}}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
