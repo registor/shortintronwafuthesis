@@ -56,6 +56,11 @@ Happy LaTeXing！~
     - 是否应该附上相关源码或者截图？
 4. 联系作者：西北农林科技大学信息工程学院耿楠
 
+## PDF 下载：
+
+- [Beamer-for-nwafuthesis-169.pdf](https://github.com/registor/shortintronwafuthesis/releases/download/v1.0/Beamer-for-nwafuthesis-169.pdf)
+
+
 
 ## 更多资料
 
