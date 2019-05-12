@@ -7,30 +7,8 @@
 % hyperref, url, 
 % ifpdf, keyval, xcolor, xxcolor
 % =============================================%
-% 由于setspace宏包会改变\@footnotetext，从面造成footcite不能引用的问题，
-% 以下代码用于修正这一问题
-\usepackage{etoolbox}
-% 代码排版工具宏包
-% 需要预先安装 python 和 pygments。
-% 此宏包要加  -shell-escape 编译参数
-% 版本2.0,支持行内代码排版
-\usepackage{minted}
+\usepackage{setspace} % 调整间距
 
-%\usepackage[bwr]{callouts}
-
-% ++++++++++++++++++++++++++++++++++++++++++++++++++
-% 为一部分代码用于解决引用setspace调整间距宏包后造成的参考文献引用脚注
-% 丢失问题
-\makeatletter
-% save the meaning of \@footnotetext
-\let\BEAMER@footnotetext\@footnotetext
-\makeatother
-% 调整间距
-\usepackage{setspace} 
-% 叉号与对号要用到的字体
-%\usepackage{pifont}
-% 绘图
-\usepackage{tikz}
 \usepackage{pgfplots}
 % 部分latex的Logo
 \usepackage{xltxtra}
@@ -44,6 +22,12 @@
 
 % ========排版键盘组合和菜单的宏包=========
 \usepackage{menukeys}
+
+% 代码排版工具宏包
+% 需要预先安装 python 和 pygments。
+% 此宏包要加  -shell-escape 编译参数
+% 版本2.0,支持行内代码排版
+\usepackage{minted}
 
 %%% Local Variables: 
 %%% mode: latex
