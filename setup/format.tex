@@ -1,3 +1,6 @@
+\makeatletter
+\@namedef{ver@beamerfontthememetropolis.sty}{9999/99/99}
+\makeatother
 \usetheme[
 %%% 外部主题选项
 %    hidetitle,           % 隐藏边栏中的短标题
@@ -13,8 +16,9 @@
   ]{NWSUAFsidebar}
   
 % 设置字体(参考曾祥东的latex-talk.tex进行设置)
+%\usefonttheme{serif,professionalfonts}
 \usefonttheme{serif,professionalfonts}
-
+  
 % Beamer settings
 %\metroset{progressbar=none}
 \setbeamerfont{title}{size=\huge, series=\bfseries}
@@ -24,6 +28,18 @@
 \setbeamerfont{caption}{size=\footnotesize, series=\bfseries}
 \setbeamerfont{footnote}{size=\tiny}
 \setbeamerfont{alerted text}{series=\bfseries}
+%\setbeamertemplate{frame numbering}{\zhnumber[style=Financial]{\insertframenumber}}
+\setbeamertemplate{itemize/enumerate subbody begin}{\footnotesize}
+\setbeamertemplate{caption}{\parbox{\textwidth}{\centering\insertcaption}\par}
+\setbeamertemplate{bibliography item}[text]
+
+% PDF bookmark
+\makeatletter
+\apptocmd{\beamer@@frametitle}{%
+  \only<1>{\expandafter\ifnum\insertcontinuationcount<2\relax
+    \bookmark[page=\the\c@page,level=4]{#1}\fi}}{}{}
+\makeatother
+
 
 % 加载字体
 % Fonts
@@ -95,6 +111,11 @@
    \or \ddagger\ddagger \else\@ctrerr\fi}}
 \makeatother
 \renewcommand{\thefootnote}{\fnsymbol{footnote}}
+
+\DeclareRobustCommand{\nonumberfootnote}[2][]{%
+  \let\thefootnote\relax
+  \footnotetext#1{#2}}
+% \renewcommand*\footnoterule{} % 取消脚注线
 
 %% 自定义相关的名称宏命令
 %% ==================================================
@@ -364,6 +385,7 @@
     \else
       $_{\textstyle\varepsilon}$%
     \fi}}  
+
 
 
 %%% Local Variables: 
