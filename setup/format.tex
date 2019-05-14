@@ -11,7 +11,39 @@
 %%% 颜色主题选项
     %lightheaderbg       % 页眉背景颜色
   ]{NWSUAFsidebar}
+  
+% 设置字体(参考曾祥东的latex-talk.tex进行设置)
+\usefonttheme{serif,professionalfonts}
 
+% Beamer settings
+%\metroset{progressbar=none}
+\setbeamerfont{title}{size=\huge, series=\bfseries}
+\setbeamerfont*{subtitle}{size=\large, shape=\itshape}
+\setbeamerfont{section title}{size=\Large, series=\bfseries}
+\setbeamerfont{frametitle}{size=\large, series=\bfseries}
+\setbeamerfont{caption}{size=\footnotesize, series=\bfseries}
+\setbeamerfont{footnote}{size=\tiny}
+\setbeamerfont{alerted text}{series=\bfseries}
+
+% 加载字体
+% Fonts
+\setmainfont{LibertinusSerif}[
+  Extension      = .otf,
+  UprightFont    = *-Regular,
+  BoldFont       = *-Bold,
+  ItalicFont     = *-Italic,
+  BoldItalicFont = *-BoldItalic,
+  Scale          = 1.1]
+\setmonofont{Iosevka}[Scale=0.96]
+\setmathfont{LibertinusMath-Regular.otf}
+\setCJKmainfont{Source Han Serif SC}[
+  UprightFont     = * SemiBold,
+  BoldFont        = * Heavy,
+  ItalicFont      = * SemiBold,
+  BoldItalicFont  = * SemiBold,
+  RawFeature      = +fwid]
+\setCJKmonofont{Sarasa Mono SC}
+  
 % 部分颜色定义  
 \definecolor{Descitem}{RGB}{0, 0, 139}
 \definecolor{StdTitle}{RGB}{26, 33, 141}
@@ -80,7 +112,7 @@
 \newcommand{\qtbr}[1]{\qtmark{\emph{\alert{#1}}}}
 
 % 自定义latex简单教程中要用到的宏命令
-\newcommand\latex{{\fontfamily{cmr}\selectfont \LaTeX}}
+\newcommand\latex{{ \LaTeX}}%\fontfamily{cmr}\selectfont
 \newcommand\msoffice{{\rmfamily MS Office}}
 \newcommand\msofficepdf{\texorpdfstring{\msoffice{}}{MS Office}}
 \newcommand\wysiwym{\textsc{WYSIWYM}---所想即所得}
@@ -300,6 +332,39 @@
 \newcommand\CASE[1]{{\addfontfeatures{Letters=Uppercase}#1}}
 \newcommand\jatext[1]{{\addCJKfontfeatures{Language=Japanese}#1}}
 \newcommand\link[1]{\href{#1}{\ \faExternalLinkSquare*}}%\faLink \faExternalLink*
+
+
+% PoZheHao, see https://github.com/CTeX-org/ctex-kit/issues/382
+\ExplSyntaxOn
+\xeCJK_new_class:n { PoZheHao }
+\__xeCJK_save_CJK_class:n { PoZheHao }
+\xeCJK_declare_char_class:nn { PoZheHao } { "2014 }
+\seq_map_inline:Nn \g__xeCJK_class_seq
+  {
+    \str_if_eq:nnF {#1} { PoZheHao }
+      {
+        \xeCJK_copy_inter_class_toks:nnnn { PoZheHao } {#1} { FullRight } {#1}
+        \xeCJK_copy_inter_class_toks:nnnn {#1} { PoZheHao } {#1} { FullRight }
+      }
+  }
+\ExplSyntaxOff
+
+% Hack
+% Use small caps for LaTeX symbol
+\DeclareRobustCommand{\LaTeX}{%
+  L\kern-.3em%
+  \raisebox{.2em}{\textsc{a}}\kern-.14em%
+  \TeX}
+% Compatibility with unicode-math
+\DeclareRobustCommand{\LaTeXe}{%
+  \LaTeX\kern.15em2%
+  \hbox{%
+    \if b\expandafter\@car\f@series\@nil
+      $_{\textstyle\symbf{\varepsilon}}$%
+    \else
+      $_{\textstyle\varepsilon}$%
+    \fi}}  
+
 
 %%% Local Variables: 
 %%% mode: latex

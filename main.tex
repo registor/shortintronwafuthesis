@@ -1,7 +1,7 @@
 % 协助检查有无过期宏包及命令
 \RequirePackage[l2tabu, orthodox]{nag}
 % 包含beamer宏包
-\documentclass[fontset = adobe, xcolor=svgnames, t, aspectratio=169]{ctexbeamer}
+\documentclass[fontset = none, xcolor=svgnames, t, aspectratio=169]{ctexbeamer}
 
 % 载入需要的宏包
 \input{setup/packages.tex}
@@ -99,10 +99,11 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
 \end{frame}
 
 \begin{frame}{为什么要用\LaTeX?}{自由的召唤}
+  %\begin{spacing}{0.98}
   \begin{columns}[c]
     \column{0.05\textwidth}
     \column{0.4\textwidth}
-    \begin{itemize} \setlength\itemsep{1em}
+    \begin{itemize} \setlength\itemsep{0.7em}
     \item \alert{懒人}的梦想
     \item 对\alert{美}的追求
     \item \alert{自由}的召唤
@@ -112,15 +113,16 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
     \item \alert{倒版倒平台}
     \item \alert{导师}的要求
     \item \alert{投稿}的需求
-    \item $\ldots$\hphantom{倒版倒a}%为了对齐，设置一个占位空间
+    \item $\cdots$\hphantom{倒版倒a}%为了对齐，设置一个占位空间
     \end{itemize}
     \column{0.5\textwidth}
     \begin{center}
-      \includegraphics[width=0.45\textwidth]{latexframe}\\
-      \includegraphics[width=0.3\textwidth]{titlepage}\\%scale=0.05
+      \includegraphics[width=0.45\textwidth]{latexframe}\\\vfill
+      \includegraphics[width=0.35\textwidth]{titlepage}\\%scale=0.05
       贴心\alert{秘书}
     \end{center}
   \end{columns}
+  %\end{spacing}
 \end{frame}
 
 \begin{frame}{为什么要用\LaTeX?}{Office的那点事}%
@@ -128,7 +130,7 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
   \includegraphics[height=.65\textheight]{msoffice2013.png}\\[.5em]
   \msoffice{} \footnote[frame,1]{及其类似软件(LibreOffice, etc.)}%为了在
                                 %beamer中显示脚注，需要使用参数[frame]
-  功能异常强大\ldots
+  功能异常强大$\cdots$
 \end{frame}
 
 \begin{frame}{为什么要用\LaTeX?}{与Word比较}
@@ -156,7 +158,7 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
       \begin{scope}[decoration={random steps,segment length=1pt,amplitude=0.1pt},decorate]
         \addplot [msofficecolour, samples=130, domain=0:2] {1+2*x^3}
                   node[near end, sloped, above] {\msoffice}
-                  node[anchor=east, pos=.98] {\tiny (我不玩了！再见\ldots)};
+                  node[anchor=east, pos=.98] {\tiny (我不玩了！再见$\cdots$)};
          \addplot [latexcolour, samples=130, domain=0:2] {2+x}
                   node[near end, sloped, above] {\latex};
       \end{scope}
@@ -224,8 +226,7 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
   \begin{itemize}
   \item 玻璃瓶和塑料瓶
     \begin{itemize}
-    \item \msoffice 是玻璃瓶$\Rightarrow$ \alert{易碎}
-    \item \latex 是塑料瓶$\Rightarrow$ \alert{皮实}
+    \item \msoffice 玻璃瓶$\Rightarrow$ \alert{易碎} VS. \latex 塑料瓶$\Rightarrow$ \alert{皮实}
     \end{itemize}
   \item 模板
     \begin{itemize}
@@ -234,8 +235,7 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
     \end{itemize}
   \item 轮子的故事
     \begin{itemize}
-    \item \msoffice$\Rightarrow$ \alert{ 发明和制造}轮子
-    \item \latex$\Rightarrow$  \alert{ 使用}轮子
+    \item \msoffice$\Rightarrow$ \alert{ 发明和制造}轮子  VS. \latex$\Rightarrow$  \alert{ 使用}轮子
     \end{itemize}
   \item 两条腿走路
     \begin{itemize}      
@@ -311,8 +311,8 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
     \item \TeX{}系统提供了300多条基本的排版命令
     \item 允许用户自定义新命令
     \end{itemize}
-  \item 有大量的适合特定领域排版需要的的宏包(CTAN\link{www.ctan.org}，
-    \alert{5693}个，\today )
+  \item 大量适合领域排版的宏包(CTAN\link{www.ctan.org}，
+    \alert{5698}个，\today )
   \end{itemize}
   \stretchoff
 \end{frame}
@@ -383,7 +383,7 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
   \item PDF输出
   \item 参考文献库
   \item 扩展宏包
-  \item \ldots\ldots
+  \item $\cdots\cdots$
   \end{itemize}
   \stretchoff
 \end{frame}
@@ -442,7 +442,7 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
       \begin{enumerate}
         \scriptsize
       \item 编译.tex源文件生成引用信息、数据库、格式信息.aux辅助文件
-      \item 使用biber程序处理第一次编译结果.aux辅助文件，从文献数据
+      \item 使用biber程序处理.aux辅助文件，从文献数据
         库提取文献列表代码，生成.bbl文件
       \item 再次编译.tex源文件，处理引用信息，再次生成.aux辅助文件
       \item 第三次编译.tex源文件，生成文献列表
@@ -497,8 +497,8 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
   \begin{itemize}
   \item {\color{blue}{高质量的输出：}}\LaTeX{}以排版质量为首要目标
   \item {\color{blue}{超常的稳定性：}}\LaTeX{}系统极少崩溃
-  \item {\color{blue}{\LaTeX{}是宏命令编程语言：}}可以用很少的命令来完成
-    非常复杂的工作，或通过重新定义\LaTeX{}命令来得到特殊的效果
+  \item {\color{blue}{\LaTeX{}是宏命令编程语言：}}用命令完成排版
+    (可自定义或重定义\LaTeX{}命令)
   \item {\color{blue}{\LaTeX{}是纯文本文件：}}占用空间很小
   \item {\color{blue}{良好的通用性和低廉的价格：}}免费
   \item {\color{blue}{超强的技术支持：}}丰富的网络资源
@@ -686,14 +686,14 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
       \begin{itemize}
       %\item GoodNotes
       \item Notability
-      \item $\ldots$
+      \item $\cdots$
       \end{itemize}
     \item \alert{软件}批注
       \begin{itemize}
       \item Adobe Acrobat Pro
       %\item Foxit Reader(福昕)
       %\item Okular
-      \item $\ldots$
+      \item $\cdots$
       \end{itemize}
     \item \alert{源码}批注\footnote[frame]{导师\qtmark{智慧过人、气
           宇不凡、天资聪颖、骨骼精奇}，学习\LaTeX 那是\alert{分分钟
@@ -708,7 +708,7 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
         \begin{itemize}
         \item changes
         %\item todonotes
-        \item $\ldots$
+        \item $\cdots$
         \end{itemize}
       \end{itemize}
     \end{itemize}
@@ -760,7 +760,7 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
     \item TexMacs,Mac平台,免费
     % \item Gummi,Linux平台,免费
     % \item Kile,Lunix平台,免费
-    \item \ldots\ldots
+    \item $\cdots\cdots$
     \end{itemize}
   \item 在线系统
     \begin{itemize}
@@ -827,14 +827,14 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
   \vspace{-3ex}
   \begin{columns}[T]
     % \column{0.05\textwidth}
-    \column{0.3\textwidth}
+    \column{0.4\textwidth}
   \begin{itemize}  
   \item 其它套件
     \begin{itemize}
     \item {\LaTeX 开源小屋}\link{http://www.latexstudio.net/page/texsoftware}
     \end{itemize}
   \end{itemize}
-  \column{0.6\textwidth}
+  \column{0.55\textwidth}
   \centering%\vspace{-4ex}
   \includegraphics[height=.4\textheight]{texliveinst/fig02-00}
   \end{columns}
@@ -1130,33 +1130,37 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
 \end{frame}
 
 \subsection[文档结构]{\latex 的文档结构}\label{sec02-02}
-\begin{frame}[t, fragile]{学习\LaTeX}{文档结构}
+\begin{frame}{学习\LaTeX}{文档结构}
+  \vspace{-4ex}
+  \begin{spacing}{1.2}
   \begin{columns}
-    \begin{column}{0.5\textwidth}      
+    \begin{column}{0.55\textwidth}
+      
       \begin{itemize}
       \item {\only<2>{\color{red}}引入文档模板命令}\\
         \begin{itemize}
         \item {\only<2>{\color{red}}\textbackslash documentclass}
         \end{itemize}
       \item {\only<3>{\color{red}}导言区:} \par
-        用于设置全局命令。
+        用于设置全局命令
         \begin{itemize}
         \item {\only<4>{\color{red}}宏包:} \par
-          扩展基本\latex 命令。
+          扩展基本\latex 命令
         \item {\only<5>{\color{red}} 定义/命令/宏:}\par
-          用户自定义的命令。
+          用户自定义的命令
         \end{itemize}
       \item {\only<6>{\color{red}}文稿:}
         \begin{itemize}
         \item {\only<7>{\color{red}}命令:} \par
-          影响参数内部的文本或是\{...\}区块中的文本。  
+          影响参数内部或\{...\}区块中的文本  
         \item {\only<8>{\color{red}}环境:} \par
           只影响环境内部的文本
         \end{itemize}
       \end{itemize}
+      
     \end{column}
 
-    \begin{column}{0.45\textwidth}
+    \begin{column}{0.35\textwidth}
       \begin{block}{.tex file}
         {
           \tiny \ttfamily
@@ -1192,6 +1196,7 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
      \end{block}
    \end{column}
  \end{columns}
+ \end{spacing}
 \end{frame}
 
 \begin{frame}[t, fragile]{学习\LaTeX}{命令和环境}
@@ -1253,7 +1258,7 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
 \begin{frame}[t,fragile]{学习\LaTeX}{基本约定}
   \stretchon
   \begin{itemize}
-  \item 分组：\{ \ldots\ldots \}
+  \item 分组：\{ $\cdots\cdots$ \}
     \begin{itemize}
     \item 欢迎你来到{\latex}（\verb|{\LaTeX}|）世界，
     \end{itemize}
@@ -1273,14 +1278,18 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
   \item 命令名称\alert{输入}错误\\[3ex]
   
   
-  比如将 \texinline{\author{作者}} 错写为 \texinline{\authos{作者}}，
-  编译后将会看到如下错误信息：
+  如将 \texinline{\author{作者}} 写为 \texinline{\authos{作者}}，
+  编译后会看到如下错误信息：
   \begin{texcode}
     ! Undefined control sequence.
     l.12 \authos
   \end{texcode}
-  其中第一行说明错误原因是“命令未定义”，第二行说明错误出现在第 12行
-  的 \texinline{\authos} 这里。
+  其中：
+  \begin{itemize}
+  \item 第一行说明错误原因是“命令未定义”
+  \item 第二行说明错误出现在第 12行的 \texinline{\authos} 这里。
+  \end{itemize}
+  
   \end{itemize}
   \stretchoff
 \end{frame}
@@ -1291,8 +1300,9 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
   \item 例如缺少\$号\\[3ex]
   
   
-  第二常见的错误是忘记将公式放在一对 \$ 里面．
-  比如将 \texinline{$2^3=8$} 错写为 \texinline{2^3=8}，
+    第二常见的错误是忘记将公式放在一对\qtmark{\$} 里，如：
+
+    将 \texinline{$2^3=8$} 错写为 \texinline{2^3=8}，
   编译后将会看到如下错误信息：
   \begin{texcode}
     ! Missing $ inserted.
@@ -1301,8 +1311,12 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
     l.19 2^
            3=8
   \end{texcode}
-  其中第一行说明错误原因是“缺少\$号”，后面几行说明错误出现在第 19行
-  的 \texinline{2^3=8} 这里。
+  其中：
+  \begin{itemize}
+  \item 第一行说明错误原因是“缺少\$号”，
+  \item 后面几行说明错误出现在第 19行的 \texinline{2^3=8} 这里。
+  \end{itemize}
+  
   \end{itemize}
   \stretchoff
 \end{frame}
@@ -1313,8 +1327,9 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
   \item 例如花括号\}不配对\\[3ex]
   
   
-  第三常见的错误是花括号无法配对．
-  比如将根号 \texinline!$\sqrt{2}$! 错写为 \texinline!$\sqrt{2]$!，
+    第三常见的错误是花括号无法配对，如：
+
+    将根号 \texinline!$\sqrt{2}$! 错写为 \texinline!$\sqrt{2]$!，
   编译后将会看到如下错误信息：
   \begin{texcode}
     ! Missing } inserted.
@@ -1322,8 +1337,12 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
                     }
     l.17 $\sqrt{2]$
   \end{texcode}
-  其中第一行说明错误原因是“缺少 \} 号”，后面几行说明错误出现在第 17
-  行这里。
+  其中：
+  \begin{itemize}
+  \item 第一行说明错误原因是“缺少 \} 号”
+  \item 后面几行说明错误出现在第 17 行这里。
+  \end{itemize}
+  
   \end{itemize}
   \stretchoff  
 \end{frame}
@@ -1614,6 +1633,36 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
       \end{itemize}
     \end{itemize}
   \end{itemize}
+  \stretchoff
+\end{frame}
+
+\begin{frame}{\nwafuthesis 模板}{注意事项}
+  \stretchon
+  \begin{itemize}
+  \item 文献数据库(\pkg{*bib})
+    \begin{itemize}
+    \item 建议自动生成 （你只有三篇参考文献？）
+      \begin{itemize}
+      \item \href{http://xueshu.baidu.com/}{百度学术}、Google Scholar等可直接复制
+      \end{itemize}
+      
+    \end{itemize}
+  \end{itemize}
+  \centering
+  \begin{annotatedFigure}
+    {\includegraphics[width=0.4\textwidth]{baiduxueshu}}
+    \annotatedFigureBox{0.36,0.51}{0.46,0.58}{red}
+    \annotatedFigureBox{0.44,0.015}{0.51,0.08}{blue}
+  \end{annotatedFigure}\quad
+  \begin{annotatedFigure}
+    {\includegraphics[width=0.4\textwidth]{googlescholar}}
+    \annotatedFigureBox{0.24,0.62}{0.28,0.66}{red}
+    \annotatedFigureBox{0.63,0.08}{0.685,0.14}{blue}
+  \end{annotatedFigure}\\[2ex]
+  \begin{annotatedFigure}
+    {\includegraphics[width=0.4\textwidth]{baiduxueshu-bibtex}}
+    \annotatedFigureBox{0.005,0.05}{0.96,0.55}{blue}
+  \end{annotatedFigure}
   \stretchoff
 \end{frame}
 
