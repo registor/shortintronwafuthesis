@@ -58,7 +58,7 @@ Happy LaTeXing！~
 
 ## PDF 下载：
 
-- [Beamer-for-nwafuthesis-169.pdf](https://github.com/registor/shortintronwafuthesis/releases/download/v1.0/Beamer-for-nwafuthesis-169.pdf)
+- [Beamer-for-nwafuthesis-169-Vx.xx.pdf](https://github.com/registor/shortintronwafuthesis/releases)
 
 
 
