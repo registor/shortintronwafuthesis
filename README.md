@@ -76,3 +76,5 @@ Happy LaTeXing！~
 
 - [SourceHanSerif](https://github.com/adobe-fonts/source-han-serif/releases)
 
+- [SourceHanSans](https://github.com/adobe-fonts/source-han-sans/releases)
+
