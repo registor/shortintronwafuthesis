@@ -42,23 +42,33 @@
 
 
 % 加载字体
-% Fonts
-\setmainfont{LibertinusSerif}[
+% 加载字体(注意需要安装相应字体，在此使用的都是免费字体)
+% 附字体下载链接
+% - [iosevka](https://github.com/be5invis/Iosevka/releases)
+% - [Libertinus](https://github.com/alif-type/libertinus/releases)
+% - [sarasa-gothic/mono](https://github.com/be5invis/Sarasa-Gothic/releases)
+% - [SourceHanSerif](https://github.com/adobe-fonts/source-han-serif/releases)
+% - [SourceHanSans](https://github.com/adobe-fonts/source-han-sans/releases)
+\setmainfont{LibertinusSerif}[% 英文衬线字体
   Extension      = .otf,
   UprightFont    = *-Regular,
   BoldFont       = *-Bold,
   ItalicFont     = *-Italic,
   BoldItalicFont = *-BoldItalic,
   Scale          = 1.1]
-\setmonofont{Iosevka}[Scale=0.96]
-\setmathfont{LibertinusMath-Regular.otf}
-\setCJKmainfont{Source Han Serif SC}[
+\setsansfont{LibertinusSans-Regular.otf}[% 英文衬线字体
+  Scale          = 1.1]
+\setmonofont{Iosevka}[Scale=1.1]% 英文等宽字体，主要用于代码排版
+\setmathfont{LibertinusMath-Regular.otf}% Libertinus数学字体，需要unicode-math支持
+\setCJKmainfont{Source Han Serif SC}[ % 设置 CJK 主字体，也就是设置 \rmfamily 的 CJK 字体，思源宋体
   UprightFont     = * SemiBold,
   BoldFont        = * Heavy,
   ItalicFont      = * SemiBold,
   BoldItalicFont  = * SemiBold,
   RawFeature      = +fwid]
-\setCJKmonofont{Sarasa Mono SC}
+\setCJKsansfont{Source Han Sans HW SC}[% 设置 CJK 无衬线的字体，也就是设置 \sffamily 的 CJK 字体，思源黑体
+  RawFeature      = +fwid]
+\setCJKmonofont{Sarasa Mono SC}% 设置 CJK 的等宽字体，也就是设置 \ttfamily 的 CJK 字体，Sarasa Mono SC(更纱黑体)
   
 % 部分颜色定义  
 \definecolor{Descitem}{RGB}{0, 0, 139}
