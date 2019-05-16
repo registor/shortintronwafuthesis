@@ -24,7 +24,7 @@
 \setbeamerfont{title}{size=\huge, series=\bfseries}
 \setbeamerfont*{subtitle}{size=\large, shape=\itshape}
 \setbeamerfont{section title}{size=\Large, series=\bfseries}
-\setbeamerfont{frametitle}{size=\large, family = \sffamily, series=\bfseries}
+\setbeamerfont{frametitle}{size=\large, series=\bfseries}
 \setbeamerfont{caption}{size=\footnotesize, series=\bfseries}
 \setbeamerfont{footnote}{size=\tiny}
 \setbeamerfont{alerted text}{series=\bfseries}
@@ -56,8 +56,8 @@
   ItalicFont     = *-Italic,
   BoldItalicFont = *-BoldItalic,
   Scale          = 1.1]
-\setsansfont{LibertinusSans-Regular.otf}[% 英文衬线字体
-  Scale=MatchUppercase]
+% \setsansfont{LibertinusSans-Regular.otf}[% 英文无衬线字体
+%   Scale=MatchUppercase]
 \setmonofont{Iosevka}[Scale=1.1]% 英文等宽字体，主要用于代码排版
 \setmathfont{LibertinusMath-Regular.otf}% Libertinus数学字体，需要unicode-math支持
 \setCJKmainfont{Source Han Serif SC}[ % 设置 CJK 主字体，也就是设置 \rmfamily 的 CJK 字体，思源宋体
@@ -105,12 +105,13 @@
 % \setbeamertemplate{enumerate mini template}{\insertenumlabel}
 
 % 设置minted宏包编排代码的参数及用于latex代码排版的简化命令
-%\setminted{breaklines=true, breakautoindent=false}
-\newmintinline{tex}{fontsize=\normalsize}
-\newmintinline[texinlinett]{tex}{fontsize=\normalsize,escapeinside=||}
+\setminted{fontsize=\footnotesize, breaklines=true, breakautoindent=false}
+\newmintinline{tex}{fontsize=\footnotesize}
+\newmintinline{sh}{fontsize=\footnotesize}
+\newmintinline[texinlinett]{tex}{escapeinside=||}
 \newminted{tex}{fontsize=\scriptsize, bgcolor=yellow!20, frame=lines, autogobble}
 \newminted[texcodett]{tex}{autogobble, fontsize=\scriptsize, bgcolor=yellow!20, frame=lines, escapeinside=||}
-\newminted[shell]{sh}{autogobble,fontsize=\small,frame=lines}
+\newminted[shell]{sh}{autogobble,frame=lines}
 \newmintedfile{tex}{bgcolor=yellow!20, fontsize=\footnotesize, frame=lines}
 
 % 改变脚注的字号和符号
@@ -363,7 +364,8 @@
 \newcommand\CASE[1]{{\addfontfeatures{Letters=Uppercase}#1}}
 \newcommand\jatext[1]{{\addCJKfontfeatures{Language=Japanese}#1}}
 \newcommand\link[1]{\href{#1}{\ \faExternalLinkSquare*}}%\faLink \faExternalLink*
-
+\newcommand\usv[1]{\texttt{U+#1}}
+\newCJKfontfamily\SourceHanSerif{Source Han Serif SC SemiBold}
 
 % PoZheHao, see https://github.com/CTeX-org/ctex-kit/issues/382
 \ExplSyntaxOn

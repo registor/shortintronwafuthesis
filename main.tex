@@ -633,27 +633,6 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
 \end{columns}
 \end{frame}
 
-\begin{frame}[t]{什么是\LaTeX?}{优点}
-  %\stretchon
-  \begin{itemize}
-  \item 修订管理
-    \begin{itemize}
-    \item 注释管理
-    \item 版本控制
-      \begin{itemize}
-      \item SVN
-      \item Git(回滚、diff)
-      \end{itemize}
-    \end{itemize}
-  \end{itemize}
-  \begin{center}
-    \includegraphics[height=0.6\textheight]{github}\quad
-    \includegraphics[height=0.6\textheight]{wordver02}\quad
-    %\includegraphics[height=0.4\textheight]{wordver02}
-  \end{center}
-  %\stretchoff
-\end{frame}
-
 \begin{frame}[t]{什么是\LaTeX?}{缺点}
   \stretchon
   \begin{itemize}
@@ -1057,7 +1036,8 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
 \section[学习\LaTeX ]{学习\LaTeX}\label{sec03}
 \subsection{命令行操作}
 
-\begin{frame}[fragile]{学习\LaTeX}{命令行基础}
+\begin{frame}[fragile]{学习\LaTeX}{命令行基础\footnote[frame,1]{本页面摘自曾祥东的\enquote{现代\LaTeX 入门讲座}
+      讲义\link{https://github.com/stone-zeng/latex-talk}。}}
   \stretchon
 %  \begin{frame}[fragile]
 %\frametitle{命令行基础}
@@ -1132,7 +1112,7 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
 \subsection[文档结构]{\latex 的文档结构}\label{sec02-02}
 \begin{frame}{学习\LaTeX}{文档结构}
   \vspace{-4ex}
-  \begin{spacing}{1.2}
+  \begin{spacing}{1.1}
   \begin{columns}
     \begin{column}{0.55\textwidth}
       
@@ -1409,10 +1389,10 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
   \begin{itemize}  
   \item 用\texinline{\nwafuset}命令设置中文题目、作者、导师等基本数据
   \end{itemize}
-  \vspace{-1.5ex}
+  \vspace{-1ex}
   \begin{center}
-    \begin{minipage}[h]{0.95\linewidth}      
-      \texfile[fontsize=\tiny]{code/nwafuset.tex}
+    \begin{minipage}[h]{0.75\linewidth}
+      \texfile[fontsize=\zihao{8}]{code/nwafuset.tex}  
     \end{minipage}
   \end{center}
   %\stretchoff
@@ -1437,6 +1417,7 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
   \begin{itemize}  
   \item 分文件撰写论文
   \end{itemize}
+  \vspace{-1ex}
   \begin{multicols}{2}
   % \begin{center}
   %   \begin{minipage}[h]{0.95\linewidth}      
@@ -1548,29 +1529,29 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
       \end{itemize}
     \end{itemize}
   \end{itemize}
-  % \centering
+  \vspace{-1.5ex}
   \begin{center}
   \begin{minipage}[h]{0.35\linewidth}
     \begin{texcode}
-\begin{figure}[htb!]
-  \includegraphics[...]{...}
-  \caption{一个校徽}
-  \label{fig:logo}
-\end{figure}
+      \begin{figure}[htb!]
+        \includegraphics[...]{...}
+        \caption{一个校徽}
+        \label{fig:logo}
+      \end{figure}
     \end{texcode}
   \end{minipage}\quad
   \begin{minipage}[h]{0.53\linewidth}
     \begin{texcode}
-\begin{table}[htb]
-  \bicaption[...]{...\label{tab:bicap}}{...}
-  \begin{tabular}{lr}
-  \toprule
-  城市 & 人口 \\
-  \midrule
-  Mexico City & 20,116,842\\
-  \bottomrule
-  \end{tabular}
-\end{table}
+      \begin{table}[htb]
+        \bicaption[...]{...\label{tab:bicap}}{...}
+        \begin{tabular}{lr}
+        \toprule
+        城市 & 人口 \\
+        \midrule
+        Mexico City & 20,116,842\\
+        \bottomrule
+        \end{tabular}
+      \end{table}
     \end{texcode}
   \end{minipage}
   \end{center}
@@ -1693,6 +1674,45 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
   %\stretchoff
 \end{frame}
 
+\begin{frame}[fragile]{\nwafuthesis 模板}{注意事项}
+  \stretchon
+  \begin{itemize}
+  \item 中文标点符号\footnote[frame,1]{本页面摘自曾祥东的\enquote{现代\LaTeX 入门讲座}
+      讲义\link{https://github.com/stone-zeng/latex-talk}。}
+    \begin{itemize}
+    \item 句号
+      \begin{itemize}
+      \item 正常文本。科技文本．
+      \end{itemize}
+    \item 引号
+      \begin{itemize}
+      \item 『传统风格』，「某乎风格」，“标准风格”，\mbox{}’\kern-0.6em奇葩风格”
+      \item 建议使用\enquote{\pkg{csquotes}}、\enquote{\pkg{dirtytalk}}等宏包
+      \end{itemize}
+    \item 破折号
+      \begin{itemize}
+      \item 断开{\SourceHanSerif\symbol{"2014}\symbol{"2014}}是不好的，
+        不断开——是好的
+      \end{itemize}
+    \item 波浪号：
+      \begin{itemize}
+      \item \texinline{~} ≠ \texinline{\textasciitilde} ≠
+        \texinline{\texttildelow} ≠ \texinline{$\sim$} ≠ 你要的那一个
+      \item \enquote{\texinline{那就是~青\textasciitilde藏\texttildelow高$\sim$原～～～～}}
+      \item 那就是~青\textasciitilde 藏\texttildelow 高 $\sim$ 原～～～～
+        % \begin{itemize}
+        % \item \texttt{\usv{007E}: Tilde}
+        % \item \texttt{\usv{02F7}: Modifier letter low tilde}
+        % \item \texttt{\usv{223C}: Tilde operator}
+        % \item \texttt{\usv{FF5E}: Fullwidth tilde}
+        % \item $\cdots{}$
+        % \end{itemize}
+      \end{itemize}
+    \end{itemize}
+  \end{itemize}
+  \stretchoff
+\end{frame}
+
 \subsection[TeXstudio]{TeXstudio配置}
 \begin{frame}{\nwafuthesis 模板}{TeXstudio配置}
   \stretchon
@@ -1798,8 +1818,9 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
   \stretchoff
 \end{frame}
 
-\begin{frame}{\nwafuthesis 模板}{宏包推荐\footnote[frame]{请务必先读文
-      档：命令行执行\alert{\texttt{texdoc package}}}}
+\begin{frame}{\nwafuthesis 模板}{宏包推荐\footnote[frame,3]{请务必先读文
+      档：命令行执行\alert{\texttt{texdoc package}}}\footnote[frame,4]{本页面摘自曾祥东的\enquote{现代\LaTeX 入门讲座}
+      讲义\link{https://github.com/stone-zeng/latex-talk}。}}
   \stretchon
   \footnotesize
   \setbeamertemplate{itemize/enumerate subbody begin}{\scriptsize}
@@ -1891,6 +1912,59 @@ Yangling, China ] % 可选项，在每页边栏的底部显示
     \end{itemize}
   \end{multicols}
   \vspace*{-0.5cm}
+  \stretchoff
+\end{frame}
+
+\subsection[Git托管]{Git版本托管}
+\begin{frame}{\nwafuthesis 模板}{Git版本托管}
+  %\stretchon
+  \begin{itemize}
+  \item 修订管理
+    \begin{itemize}
+    \item 注释管理
+    \item 版本控制
+      \begin{itemize}
+      \item SVN
+      \item Git(回滚、diff)
+      \end{itemize}
+    \end{itemize}
+  \end{itemize}
+  \begin{center}
+    \includegraphics[height=0.6\textheight]{github}\quad
+    \includegraphics[height=0.6\textheight]{wordver02}\quad
+    %\includegraphics[height=0.4\textheight]{wordver02}
+  \end{center}
+  %\stretchoff
+\end{frame}
+
+\begin{frame}[fragile]{\nwafuthesis 模板}{Git版本托管
+    \footnote[frame,1]{本页面摘自曾祥东的\enquote{现代\LaTeX 入门讲座}
+      讲义\link{https://github.com/stone-zeng/latex-talk}。}}
+  \stretchon
+  \begin{itemize}
+    \item 版本管理的必要性
+      \begin{itemize}
+        \item 远离「初稿，第二稿，第三稿……终稿，终稿（打死也不改了）」
+        \item 有底气做大范围修改、重构
+        \item 方便与他人协同合作
+      \end{itemize}
+    \item 基本用法
+      \begin{itemize}
+        \item 把大象放进冰箱：\shinline{git init}、\shinline{git add}、\shinline{git commit}
+        \item 时空穿梭：\shinline{git reset}、\shinline{git revert}
+        \item 平行宇宙：\shinline{git branch}、\shinline{git checkout}、\shinline{git rebase}
+        \item 推荐用\enquote{GitHub Desktop}、\enquote{VS Code}等软件进行可视化操作
+        \item 参考链接：\link{https://git-scm.com/book/en/v2}
+          \link{https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000}
+      \end{itemize}
+    \item GitHub \href{https://github.com}{\faGithub}
+      \begin{itemize}
+        \item 远程 Git 仓库
+        \item Clone \& fork
+        \item Issues \& pull requests
+        \item \alert{提醒：绑定 \texttt{.edu} 邮箱可以免费无限量使用私有仓库}
+      \end{itemize}
+  \end{itemize}
   \stretchoff
 \end{frame}
 
